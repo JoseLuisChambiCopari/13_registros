@@ -34,7 +34,7 @@ int main(){
 		cout<<"NOMBRE COMPLETO: "<<EMPLEADOS[i].nom<<endl;
         cout<<"VENTAS: "<<endl;
         for (int j=0; j<12; j++){
-            cout<<"Mes "<<(j+1)<<": "<<EMPLEADOS[i].ven[j]<<"soles.    ";
+            cout<<"Mes "<<(j+1)<<": "<<EMPLEADOS[i].ven[j]<<" unidades.    ";
         }
         cout<<" "<<endl;
         cout<<"SALARIO DEL EMPLEADO: ";
@@ -66,5 +66,5 @@ void MayorVentas (EMP EMPLEADOS[], int n) {
     cout<<"EMPLEADO CON MAS VENTAS: "<<endl;
     cout<<"NUMERO: "<<num_empleado<<endl;
 	cout<<"NOMBRE: " <<nombre_empleado<<endl; 
-    cout<<"TOTAL DE VENTAS: "<<total_ventas<<" soles en los 12 meses."<<endl;
+    cout<<"TOTAL DE VENTAS: "<<total_ventas<<" unidades en los 12 meses."<<endl;
 }
