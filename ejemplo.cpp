@@ -10,7 +10,7 @@ struct EMP {
 
 void MayorVentas (EMP[], int );
 void AumentodelSalario(EMP[], int);
-
+void BajasVentasenDiciembre(EMP[], int);
 
 int main(){
     EMP EMPLEADOS[100] ;
@@ -47,6 +47,9 @@ int main(){
     cout<<"------------------------------------------------------------------"<<endl;
     cout<<"INCREMENTO DE SALARIOS A EMPLEADOS QUE PASARON LAS 100 UNIDADES DE VENTA AL AÑO:"<<endl;
     AumentodelSalario(EMPLEADOS, n);
+    cout<<"---------------------------------------------------------------------"<<endl;
+    cout<<"EMPLEADOS CON VENTAS MENORES A 30 UNIDADES EN EL MES DE DICIEMBRE:"<<endl;
+    BajasVentasenDiciembre(EMPLEADOS, n);
     return 0;
 }
 
@@ -88,3 +91,11 @@ void AumentodelSalario(EMP EMPLEADOS[], int n) {
         }
     }
 }
+
+void BajasVentasenDiciembre(EMP EMPLEADOS[], int n) {
+    for (int i=0; i<n; i++) {
+        if(EMPLEADOS[i].ven[11]<30) {
+        	cout<<"NUMERO: "<<EMPLEADOS[i].num<<" - "<<"NOMBRE: "<<EMPLEADOS[i].nom<<endl;
+        }
+    }
+}	
