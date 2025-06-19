@@ -8,6 +8,8 @@ struct EMP {
     float ven[12],sal;
 };
 
+void MayorVentas (EMP[], int );
+
 int main(){
     EMP EMPLEADOS[100] ;
     int n;
@@ -38,6 +40,31 @@ int main(){
         cout<<"SALARIO DEL EMPLEADO: ";
         cout<<EMPLEADOS[i].sal<<endl;
         cout<<"---------------------------------------------------------------"<<endl;
-    }    
+    }
+    MayorVentas(EMPLEADOS, n);
     return 0;
+}
+
+void MayorVentas (EMP EMPLEADOS[], int n) {
+    int num_empleado=EMPLEADOS[0].num;
+    string nombre_empleado=EMPLEADOS[0].nom;
+    float total_ventas=0;
+    for (int mes=0; mes<12; mes++) {
+        total_ventas=total_ventas + EMPLEADOS[0].ven[mes];
+    }
+    for (int i = 1; i < n; i++) {
+        float ventas_actuales=0;
+        for (int mes=0; mes<12; mes++) {
+            ventas_actuales = ventas_actuales+EMPLEADOS[i].ven[mes];
+        }
+        if (ventas_actuales>total_ventas) {
+            total_ventas=ventas_actuales;
+            num_empleado=EMPLEADOS[i].num;
+            nombre_empleado=EMPLEADOS[i].nom;
+        }
+    }
+    cout<<"EMPLEADO CON MAS VENTAS: "<<endl;
+    cout<<"NUMERO: "<<num_empleado<<endl;
+	cout<<"NOMBRE: " <<nombre_empleado<<endl; 
+    cout<<"TOTAL DE VENTAS: "<<total_ventas<<" soles en los 12 meses."<<endl;
 }
