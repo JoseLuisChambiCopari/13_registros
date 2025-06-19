@@ -9,6 +9,8 @@ struct EMP {
 };
 
 void MayorVentas (EMP[], int );
+void AumentodelSalario(EMP[], int);
+
 
 int main(){
     EMP EMPLEADOS[100] ;
@@ -42,6 +44,9 @@ int main(){
         cout<<"---------------------------------------------------------------"<<endl;
     }
     MayorVentas(EMPLEADOS, n);
+    cout<<"------------------------------------------------------------------"<<endl;
+    cout<<"INCREMENTO DE SALARIOS A EMPLEADOS QUE PASARON LAS 100 UNIDADES DE VENTA AL AÑO:"<<endl;
+    AumentodelSalario(EMPLEADOS, n);
     return 0;
 }
 
@@ -67,4 +72,19 @@ void MayorVentas (EMP EMPLEADOS[], int n) {
     cout<<"NUMERO: "<<num_empleado<<endl;
 	cout<<"NOMBRE: " <<nombre_empleado<<endl; 
     cout<<"TOTAL DE VENTAS: "<<total_ventas<<" unidades en los 12 meses."<<endl;
+}
+
+void AumentodelSalario(EMP EMPLEADOS[], int n) {
+    for(int i=0; i<n; i++){
+        float total_unidades=0;
+        for (int mes=0; mes<12; mes++) {
+            total_unidades=total_unidades+EMPLEADOS[i].ven[mes];
+        }
+        if(total_unidades>100){
+            float aumento=EMPLEADOS[i].sal * 0.10;
+            EMPLEADOS[i].sal=EMPLEADOS[i].sal + aumento;
+            cout<<"Se aplico un aumento del 10% en el salario a "<<EMPLEADOS[i].nom<<endl;
+            cout<<"NUEVO SALARIO:"<<EMPLEADOS[i].sal<<" soles"<<endl;
+        }
+    }
 }
