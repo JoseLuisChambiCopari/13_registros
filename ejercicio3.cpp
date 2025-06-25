@@ -4,7 +4,7 @@ using namespace std;
 
 struct PER {
 	string nom;
-	int dia;
+	int dia; 
 	int mes;
 	int anio;
 };
